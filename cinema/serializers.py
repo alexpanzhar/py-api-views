@@ -22,3 +22,21 @@ class MovieSerializer(serializers.Serializer):
         instance.save()
 
         return instance
+
+
+class ActorSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    first_name = serializers.CharField(max_length=255)
+    last_name = serializers.CharField(max_length=255)
+
+
+class GenreSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(max_length=255)
+
+
+class CinemaHallSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(max_length=255)
+    rows = serializers.IntegerField()
+    seats_in_row = serializers.IntegerField()
