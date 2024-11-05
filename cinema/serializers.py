@@ -31,10 +31,12 @@ class ActorSerializer(serializers.ModelSerializer):
 
 
 class GenreSerializer(serializers.ModelSerializer):
-    model = Genre
-    fields = ("id", "name")
+    class Meta:
+        model = Genre
+        fields = ("id", "name")
 
 
 class CinemaHallSerializer(serializers.ModelSerializer):
-    model = CinemaHall
-    fields = ("id", "name", "rows", "seats_in_row")
+    class Meta:
+        model = CinemaHall
+        fields = ("id", "name", "rows", "seats_in_row")
